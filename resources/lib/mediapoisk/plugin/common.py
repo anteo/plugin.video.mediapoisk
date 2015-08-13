@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import random
 from mediapoisk import container as container
 from mediapoisk.common import filter_dict, date_to_str
 from mediapoisk.enumerations import Section
@@ -100,8 +101,10 @@ def itemify_details(details):
             'genre': u" / ".join(unicode(g) for g in details.genres),
             'year': details.year,
             'originaltitle': u" / ".join(details.original_title),
-        })
+        }),
     }
+    if plugin.get_setting('use-screenshots-as-fanart', bool) and hasattr(details, 'screenshots') and details.screenshots:
+        item.setdefault('properties', {})['fanart_image'] = random.choice(details.screenshots)
     return with_fanart(item)
 
 

@@ -9,11 +9,12 @@
     <category label="40214">
         <setting type="labelenum" id="results-per-page" label="40202" values="15|30|60|120" default="15"/>
         <setting type="labelenum" id="batch-results" label="40203" values="2|5|10" default="5"/>
+        <setting type="bool" id="use-screenshots-as-fanart" label="40223" default="true"/>
         <setting type="lsep" label="40204"/>
         <setting type="bool" id="show-original-title" label="40208" default="false"/>
         <setting type="bool" id="show-video-quality" label="40205" default="true"/>
         <setting type="bool" id="show-audio-quality" label="40206" default="true"/>
-        <setting type="bool" id="show-total-size" label="40207" default="true"/>
+        <setting type="bool" id="show-total-size" label="40207" default="false"/>
         <setting type="bool" id="show-duration" label="40213" default="true"/>
         <setting type="bool" id="show-language" label="40209" default="false"/>
         <setting type="bool" id="show-genre" label="40210" default="true"/>

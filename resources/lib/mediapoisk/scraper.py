@@ -22,7 +22,7 @@ Media = namedtuple('Media', ['id', 'title', 'original_title', 'date', 'flag', 'q
 
 Details = namedtuple('Details', ['title', 'original_title', 'countries', 'year', 'release_date', 'release_date_russia',
                                  'studios', 'genres', 'plot', 'creators', 'actors', 'voice_artists',
-                                 'rating', 'user_rating', 'poster', 'media_id', 'section'])
+                                 'rating', 'user_rating', 'poster', 'media_id', 'section', 'screenshots'])
 
 Folder = namedtuple('Folder', ['id', 'media_id', 'title', 'flag', 'link', 'quality', 'languages', 'fmt',
                                'embedded_subtitles', 'external_subtitles', 'size', 'files', 'section'])
@@ -371,10 +371,11 @@ class MediaPoiskScraper(AbstractScraper):
 
             plot = contents.find('div', {'style': 'display:table-cell;.*?'}).text
             poster = contents.find("div", {'class': 'media_pic'}).find("a").attr('href')
+            screenshots = contents.find('div', {'id': 'imgsContainer'}).find('a').attrs('href')
 
             details = Details(title, original_title, countries, year, release_date, release_date_russia,
                               studios, genres, plot, creators, actors, voice_artists,
-                              rating, user_rating, poster, media_id, section)
+                              rating, user_rating, poster, media_id, section, screenshots)
         self.log.info("Got details successfully, %d warning(s)." % warnings)
         self.log.debug(repr(details).decode("unicode-escape"))
 

@@ -16,8 +16,12 @@
         <website>http://mediapoisk.info/</website>
         <summary lang="en">Explore MediaPoisk.info</summary>
         <summary lang="ru">Ваш проводник по порталу MediaPoisk.info</summary>
-        <description lang="ru">Находите и просматривайте фильмы и сериалы с портала MediaPoisk.info!</description>
-        <description lang="en">Explore movies and series on MediaPoisk.info!</description>
+        <description lang="ru">Находите и просматривайте фильмы и сериалы с портала MediaPoisk.info!
+
+Только для абонентов сети Academ.org</description>
+        <description lang="en">Explore movies and series on MediaPoisk.info!
+
+Only for Academ.org users.</description>
         <email>anteo@academ.org</email>
     </extension>
 </addon>
